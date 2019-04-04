@@ -1,0 +1,734 @@
+2019-04-04 18:48:03.308 DEBUG 9552 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2019-04-04 18:48:03.409  INFO 9552 --- [main] c.s.coffeehouse.CoffeeHouseApplication   : Starting CoffeeHouseApplication on MacBook-Pro-asychev.local with PID 9552 (/Users/a.sychev/Desktop/RSOI/coffee-house-api/target/classes started by a.sychev in /Users/a.sychev/Desktop/RSOI/coffee-house-api)
+2019-04-04 18:48:03.410 DEBUG 9552 --- [main] c.s.coffeehouse.CoffeeHouseApplication   : Running with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE
+2019-04-04 18:48:03.411  INFO 9552 --- [main] c.s.coffeehouse.CoffeeHouseApplication   : No active profile set, falling back to default profiles: default
+2019-04-04 18:48:04.068  INFO 9552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-04 18:48:04.170  INFO 9552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98ms. Found 1 repository interfaces.
+2019-04-04 18:48:04.545  INFO 9552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-04 18:48:05.575 ERROR 9552 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) [spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) [spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:112) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b42a0ca.CGLIB$jpaVendorAdapter$4(<generated>) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b42a0ca$$FastClassBySpringCGLIB$$cc072509.invoke(<generated>) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b42a0ca.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1244) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1244) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.sychev.coffeehouse.CoffeeHouseApplication.main(CoffeeHouseApplication.java:10) ~[classes/:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 76 common frames omitted
+
+2019-04-04 18:48:05.581  WARN 9552 --- [main] o.s.b.a.orm.jpa.DatabaseLookup           : Unable to determine jdbc url from datasource
+
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:328) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) ~[spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:112) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b42a0ca.CGLIB$jpaVendorAdapter$4(<generated>) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b42a0ca$$FastClassBySpringCGLIB$$cc072509.invoke(<generated>) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$3b42a0ca.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1244) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1244) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1164) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.sychev.coffeehouse.CoffeeHouseApplication.main(CoffeeHouseApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 61 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 62 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 76 common frames omitted
+
+2019-04-04 18:48:05.627 DEBUG 9552 --- [main] o.hibernate.jpa.internal.util.LogHelper  : PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: sun.misc.Launcher$AppClassLoader@18b4aac2
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: HikariDataSource (null)
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/Users/a.sychev/Desktop/RSOI/coffee-house-api/target/classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		com.sychev.coffeehouse.model.entity.CafeEntity]
+	Mapping files names []
+	Properties []
+2019-04-04 18:48:05.636 DEBUG 9552 --- [main] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2019-04-04 18:48:05.637 DEBUG 9552 --- [main] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+2019-04-04 18:48:05.639 DEBUG 9552 --- [main] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+2019-04-04 18:48:05.679  INFO 9552 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-04-04 18:48:05.680  INFO 9552 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-04-04 18:48:05.751 DEBUG 9552 --- [main] o.hibernate.service.spi.ServiceBinding   : Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+2019-04-04 18:48:05.763 DEBUG 9552 --- [main] o.h.c.internal.RegionFactoryInitiator    : Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+2019-04-04 18:48:05.763 DEBUG 9552 --- [main] o.h.c.internal.RegionFactoryInitiator    : Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2019-04-04 18:48:05.772  INFO 9552 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-04-04 18:48:05.794 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@25a73de1
+2019-04-04 18:48:05.795 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@25a73de1
+2019-04-04 18:48:05.795 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@25a73de1
+2019-04-04 18:48:05.795 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3afae281
+2019-04-04 18:48:05.796 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.TrueFalseType@3c017078
+2019-04-04 18:48:05.796 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.YesNoType@5c645b43
+2019-04-04 18:48:05.798 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@17814b1c
+2019-04-04 18:48:05.798 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@17814b1c
+2019-04-04 18:48:05.798 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@17814b1c
+2019-04-04 18:48:05.799 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.CharacterType@522ba524
+2019-04-04 18:48:05.799 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.CharacterType@522ba524
+2019-04-04 18:48:05.799 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@522ba524
+2019-04-04 18:48:05.800 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@1e6cc850
+2019-04-04 18:48:05.801 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@1e6cc850
+2019-04-04 18:48:05.801 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@1e6cc850
+2019-04-04 18:48:05.804 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.IntegerType@63ec445c
+2019-04-04 18:48:05.805 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.IntegerType@63ec445c
+2019-04-04 18:48:05.805 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@63ec445c
+2019-04-04 18:48:05.806 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@6b474074
+2019-04-04 18:48:05.806 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@6b474074
+2019-04-04 18:48:05.807 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.LongType@6b474074
+2019-04-04 18:48:05.807 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@2bac9ba
+2019-04-04 18:48:05.808 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@2bac9ba
+2019-04-04 18:48:05.808 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@2bac9ba
+2019-04-04 18:48:05.809 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@54f66455
+2019-04-04 18:48:05.809 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@54f66455
+2019-04-04 18:48:05.809 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@54f66455
+2019-04-04 18:48:05.810 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5cd61783
+2019-04-04 18:48:05.810 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5cd61783
+2019-04-04 18:48:05.811 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@7103ab0
+2019-04-04 18:48:05.811 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@7103ab0
+2019-04-04 18:48:05.812 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.StringType@3f92c349
+2019-04-04 18:48:05.812 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.StringType@3f92c349
+2019-04-04 18:48:05.813 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@6be25526
+2019-04-04 18:48:05.813 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@70e02081
+2019-04-04 18:48:05.814 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.UrlType@cb0f763
+2019-04-04 18:48:05.814 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.UrlType@cb0f763
+2019-04-04 18:48:05.822 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.DurationType@4ba89729
+2019-04-04 18:48:05.823 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.DurationType@4ba89729
+2019-04-04 18:48:05.834 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Instant -> org.hibernate.type.InstantType@109d724c
+2019-04-04 18:48:05.835 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.InstantType@109d724c
+2019-04-04 18:48:05.836 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@257cc1fc
+2019-04-04 18:48:05.837 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@257cc1fc
+2019-04-04 18:48:05.838 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.LocalDateType@99a78d7
+2019-04-04 18:48:05.838 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@99a78d7
+2019-04-04 18:48:05.839 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@48c3205a
+2019-04-04 18:48:05.840 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@48c3205a
+2019-04-04 18:48:05.842 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5dbf5634
+2019-04-04 18:48:05.843 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5dbf5634
+2019-04-04 18:48:05.844 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@3015db78
+2019-04-04 18:48:05.845 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@3015db78
+2019-04-04 18:48:05.851 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@127f9161
+2019-04-04 18:48:05.852 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@127f9161
+2019-04-04 18:48:05.854 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.DateType@3e7dfd44
+2019-04-04 18:48:05.854 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.DateType@3e7dfd44
+2019-04-04 18:48:05.856 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.TimeType@d8948cd
+2019-04-04 18:48:05.857 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@d8948cd
+2019-04-04 18:48:05.858 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.TimestampType@336365bc
+2019-04-04 18:48:05.860 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@336365bc
+2019-04-04 18:48:05.860 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@336365bc
+2019-04-04 18:48:05.862 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@7351a16e
+2019-04-04 18:48:05.865 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.CalendarType@6e91893
+2019-04-04 18:48:05.866 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@6e91893
+2019-04-04 18:48:05.868 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@6e91893
+2019-04-04 18:48:05.869 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5b12012e
+2019-04-04 18:48:05.871 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.LocaleType@766a4535
+2019-04-04 18:48:05.872 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@766a4535
+2019-04-04 18:48:05.874 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.CurrencyType@60e21209
+2019-04-04 18:48:05.875 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@60e21209
+2019-04-04 18:48:05.876 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.TimeZoneType@1f38957
+2019-04-04 18:48:05.876 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@1f38957
+2019-04-04 18:48:05.877 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.ClassType@62e7dffa
+2019-04-04 18:48:05.878 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@62e7dffa
+2019-04-04 18:48:05.881 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@35835fa
+2019-04-04 18:48:05.881 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@35835fa
+2019-04-04 18:48:05.882 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@2a27cb34
+2019-04-04 18:48:05.885 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BinaryType@64aad6db
+2019-04-04 18:48:05.886 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BinaryType@64aad6db
+2019-04-04 18:48:05.886 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BinaryType@64aad6db
+2019-04-04 18:48:05.887 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@621f89b8
+2019-04-04 18:48:05.888 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@621f89b8
+2019-04-04 18:48:05.889 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@621f89b8
+2019-04-04 18:48:05.892 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.RowVersionType@40368a46
+2019-04-04 18:48:05.896 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.ImageType@3d43fe
+2019-04-04 18:48:05.899 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.CharArrayType@476a736d
+2019-04-04 18:48:05.899 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.CharArrayType@476a736d
+2019-04-04 18:48:05.899 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.CharArrayType@476a736d
+2019-04-04 18:48:05.900 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@3db64bd4
+2019-04-04 18:48:05.901 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@3db64bd4
+2019-04-04 18:48:05.901 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@3db64bd4
+2019-04-04 18:48:05.901 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.TextType@55ecbafe
+2019-04-04 18:48:05.902 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.NTextType@232cce0
+2019-04-04 18:48:05.905 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BlobType@7fc645e4
+2019-04-04 18:48:05.906 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7fc645e4
+2019-04-04 18:48:05.907 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@3cbcd8f3
+2019-04-04 18:48:05.938 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.ClobType@7ec25216
+2019-04-04 18:48:05.938 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@7ec25216
+2019-04-04 18:48:05.940 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.NClobType@705f83a7
+2019-04-04 18:48:05.940 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@705f83a7
+2019-04-04 18:48:05.940 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@256a1825
+2019-04-04 18:48:05.941 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5327a06e
+2019-04-04 18:48:05.942 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.SerializableType@3051e0b2
+2019-04-04 18:48:05.947 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.ObjectType@7baf6acf
+2019-04-04 18:48:05.947 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7baf6acf
+2019-04-04 18:48:05.949 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@8ed9cf
+2019-04-04 18:48:05.949 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@f72203
+2019-04-04 18:48:05.949 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@377008df
+2019-04-04 18:48:05.949 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@540dbda9
+2019-04-04 18:48:05.950 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@22bb5646
+2019-04-04 18:48:05.950 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@1be59f28
+2019-04-04 18:48:05.950 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@2ce45a7b
+2019-04-04 18:48:05.950 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@153d4abb
+2019-04-04 18:48:05.958 DEBUG 9552 --- [main] o.h.boot.internal.BootstrapContextImpl   : Injecting JPA temp ClassLoader [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@1cb19dba] into BootstrapContext; was [null]
+2019-04-04 18:48:05.958 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : ClassLoaderAccessImpl#injectTempClassLoader(org.springframework.instrument.classloading.SimpleThrowawayClassLoader@1cb19dba) [was null]
+2019-04-04 18:48:05.959 DEBUG 9552 --- [main] o.h.boot.internal.BootstrapContextImpl   : Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@73017a80] into BootstrapContext; was [null]
+2019-04-04 18:48:05.959 DEBUG 9552 --- [main] o.h.boot.internal.BootstrapContextImpl   : Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@6ae7deac] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@4a5905d9]
+2019-04-04 18:48:06.008 DEBUG 9552 --- [main] o.h.boot.internal.BootstrapContextImpl   : Injecting JPA temp ClassLoader [null] into BootstrapContext; was [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@1cb19dba]
+2019-04-04 18:48:06.009 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : ClassLoaderAccessImpl#injectTempClassLoader(null) [was org.springframework.instrument.classloading.SimpleThrowawayClassLoader@1cb19dba]
+2019-04-04 18:48:06.016 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2019-04-04 18:48:06.019 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2019-04-04 18:48:06.020 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2019-04-04 18:48:06.020 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2019-04-04 18:48:06.020 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2019-04-04 18:48:06.021 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2019-04-04 18:48:06.022 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2019-04-04 18:48:06.023 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2019-04-04 18:48:06.024 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2019-04-04 18:48:06.024 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2019-04-04 18:48:06.025 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2019-04-04 18:48:06.025 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2019-04-04 18:48:06.025 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2019-04-04 18:48:06.026 DEBUG 9552 --- [main] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2019-04-04 18:48:06.046  INFO 9552 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2019-04-04 18:48:06.064 DEBUG 9552 --- [main] o.h.e.j.env.spi.IdentifierHelperBuilder  : IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+2019-04-04 18:48:06.068  INFO 9552 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2019-04-04 18:48:06.072 DEBUG 9552 --- [main] o.h.boot.model.relational.Namespace      : Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+2019-04-04 18:48:06.074 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@2f04105
+2019-04-04 18:48:06.074 DEBUG 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@2f04105
+2019-04-04 18:48:06.074  INFO 9552 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@35835fa
+2019-04-04 18:48:06.075 DEBUG 9552 --- [main] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@62566842] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@2f1ea80d]
+2019-04-04 18:48:06.102 DEBUG 9552 --- [main] org.hibernate.cfg.AnnotationBinder       : Binding entity from annotated class: com.sychev.coffeehouse.model.entity.CafeEntity
+2019-04-04 18:48:06.120 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2019-04-04 18:48:06.129 DEBUG 9552 --- [main] o.h.cfg.annotations.EntityBinder         : Import with entity name CafeEntity
+2019-04-04 18:48:06.131 DEBUG 9552 --- [main] o.h.boot.model.relational.Namespace      : Created database namespace [logicalName=Name{catalog=null, schema=coffeehouse}, physicalName=Name{catalog=null, schema=coffeehouse}]
+2019-04-04 18:48:06.133 DEBUG 9552 --- [main] o.h.cfg.annotations.EntityBinder         : Bind entity com.sychev.coffeehouse.model.entity.CafeEntity on table cafe
+2019-04-04 18:48:06.160 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.167 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property id with lazy=false
+2019-04-04 18:48:06.172 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:id]
+2019-04-04 18:48:06.174 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for id
+2019-04-04 18:48:06.177 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property id
+2019-04-04 18:48:06.192 DEBUG 9552 --- [main] org.hibernate.cfg.BinderHelper           : #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, , ...)
+2019-04-04 18:48:06.195 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=cafe_uid, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.197 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property cafeUid with lazy=false
+2019-04-04 18:48:06.197 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:cafeUid]
+2019-04-04 18:48:06.198 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for cafeUid
+2019-04-04 18:48:06.198 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property cafeUid
+2019-04-04 18:48:06.199 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=description, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.199 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property description with lazy=false
+2019-04-04 18:48:06.199 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:description]
+2019-04-04 18:48:06.199 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for description
+2019-04-04 18:48:06.199 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property description
+2019-04-04 18:48:06.199 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=latitude, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.200 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property latitude with lazy=false
+2019-04-04 18:48:06.200 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:latitude]
+2019-04-04 18:48:06.200 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for latitude
+2019-04-04 18:48:06.200 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property latitude
+2019-04-04 18:48:06.201 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=longitude, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.201 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property longitude with lazy=false
+2019-04-04 18:48:06.201 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:longitude]
+2019-04-04 18:48:06.201 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for longitude
+2019-04-04 18:48:06.201 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property longitude
+2019-04-04 18:48:06.212 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=name, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.215 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property name with lazy=false
+2019-04-04 18:48:06.215 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:name]
+2019-04-04 18:48:06.216 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for name
+2019-04-04 18:48:06.216 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property name
+2019-04-04 18:48:06.216 DEBUG 9552 --- [main] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(coffeehouse.cafe), mappingColumn=owner_uid, insertable=true, updatable=true, unique=false}
+2019-04-04 18:48:06.217 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property ownerUid with lazy=false
+2019-04-04 18:48:06.217 DEBUG 9552 --- [main] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [com.sychev.coffeehouse.model.entity.CafeEntity:ownerUid]
+2019-04-04 18:48:06.217 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for ownerUid
+2019-04-04 18:48:06.218 DEBUG 9552 --- [main] o.h.cfg.annotations.PropertyBinder       : Building property ownerUid
+2019-04-04 18:48:06.220 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for id
+2019-04-04 18:48:06.221 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for cafeUid
+2019-04-04 18:48:06.221 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for description
+2019-04-04 18:48:06.221 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for latitude
+2019-04-04 18:48:06.221 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for longitude
+2019-04-04 18:48:06.222 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for name
+2019-04-04 18:48:06.222 DEBUG 9552 --- [main] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for ownerUid
+2019-04-04 18:48:06.224 DEBUG 9552 --- [main] org.hibernate.mapping.PrimaryKey         : Forcing column [id] to be non-null as it is part of the primary key for table [cafe]
+2019-04-04 18:48:06.262 DEBUG 9552 --- [main] o.hibernate.internal.SessionFactoryImpl  : Building session factory
+2019-04-04 18:48:06.265 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : SessionFactory name : null
+2019-04-04 18:48:06.265 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Automatic flush during beforeCompletion(): enabled
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Automatic session close at end of transaction: disabled
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Statistics: disabled
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Deleted entity synthetic identifier rollback: disabled
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Default entity-mode: pojo
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Allow initialization of lazy state outside session : disabled
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Using BatchFetchStyle : LEGACY
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Default batch fetch size: -1
+2019-04-04 18:48:06.266 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Maximum outer join fetch depth: null
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Default null ordering: NONE
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Order SQL updates by primary key: disabled
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Order SQL inserts for batching: disabled
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : multi-tenancy strategy : NONE
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JTA Track by Thread: enabled
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Query language substitutions: {}
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Named query checking : enabled
+2019-04-04 18:48:06.267 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Second-level cache: disabled
+2019-04-04 18:48:06.269 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Second-level query cache: disabled
+2019-04-04 18:48:06.269 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Second-level query cache factory: null
+2019-04-04 18:48:06.269 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Second-level cache region prefix: null
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Optimize second-level cache for minimal puts: disabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Structured second-level cache entries: disabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Second-level cache direct-reference entries: disabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Automatic eviction of collection cache: disabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JDBC batch size: 0
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JDBC batch updates for versioned data: enabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Scrollable result sets: disabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Wrap result sets: disabled
+2019-04-04 18:48:06.270 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JDBC3 getGeneratedKeys(): disabled
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JDBC result set fetch size: null
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Connection release mode: ON_CLOSE
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : Generate SQL with comments: disabled
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JPA compliance - query : 
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JPA compliance - closed-handling : 
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JPA compliance - lists : 
+2019-04-04 18:48:06.271 DEBUG 9552 --- [main] org.hibernate.cfg.Settings               : JPA compliance - transactions : 
+2019-04-04 18:48:06.354 DEBUG 9552 --- [main] o.hibernate.internal.SessionFactoryImpl  : Session factory constructed with filter configurations : {}
+2019-04-04 18:48:06.355 DEBUG 9552 --- [main] o.hibernate.internal.SessionFactoryImpl  : Instantiating session factory with properties: {gopherProxySet=false, awt.toolkit=sun.lwawt.macosx.LWCToolkit, hibernate.id.new_generator_mappings=true, file.encoding.pkg=sun.io, java.specification.version=1.8, sun.cpu.isalist=, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@15dc339f, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=UTF-8, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy, java.class.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/a.sychev/Desktop/RSOI/coffee-house-api/target/classes:/Users/a.sychev/.m2/repository/com/github/windmill312/proto-models/1.0.0-SNAPSHOT/proto-models-1.0.0-SNAPSHOT.jar:/Users/a.sychev/.m2/repository/org/lognet/grpc-spring-boot-starter/2.3.2/grpc-spring-boot-starter-2.3.2.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-netty/1.11.0/grpc-netty-1.11.0.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-core/1.11.0/grpc-core-1.11.0.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-context/1.11.0/grpc-context-1.11.0.jar:/Users/a.sychev/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/Users/a.sychev/.m2/repository/io/opencensus/opencensus-api/0.11.0/opencensus-api-0.11.0.jar:/Users/a.sychev/.m2/repository/io/opencensus/opencensus-contrib-grpc-metrics/0.11.0/opencensus-contrib-grpc-metrics-0.11.0.jar:/Users/a.sychev/.m2/repository/io/netty/netty-codec-http2/4.1.31.Final/netty-codec-http2-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-codec-http/4.1.31.Final/netty-codec-http-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-codec/4.1.31.Final/netty-codec-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-handler/4.1.31.Final/netty-handler-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-buffer/4.1.31.Final/netty-buffer-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-common/4.1.31.Final/netty-common-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-handler-proxy/4.1.31.Final/netty-handler-proxy-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-transport/4.1.31.Final/netty-transport-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-resolver/4.1.31.Final/netty-resolver-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/netty/netty-codec-socks/4.1.31.Final/netty-codec-socks-4.1.31.Final.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-services/1.11.0/grpc-services-1.11.0.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-protobuf/1.11.0/grpc-protobuf-1.11.0.jar:/Users/a.sychev/.m2/repository/com/google/protobuf/protobuf-java/3.5.1/protobuf-java-3.5.1.jar:/Users/a.sychev/.m2/repository/com/google/protobuf/protobuf-java-util/3.5.1/protobuf-java-util-3.5.1.jar:/Users/a.sychev/.m2/repository/com/google/api/grpc/proto-google-common-protos/1.0.0/proto-google-common-protos-1.0.0.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-protobuf-lite/1.11.0/grpc-protobuf-lite-1.11.0.jar:/Users/a.sychev/.m2/repository/io/grpc/grpc-stub/1.11.0/grpc-stub-1.11.0.jar:/Users/a.sychev/.m2/repository/com/google/instrumentation/instrumentation-api/0.4.3/instrumentation-api-0.4.3.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.2.RELEASE/spring-boot-starter-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot/2.1.2.RELEASE/spring-boot-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.1.2.RELEASE/spring-boot-starter-logging-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/a.sychev/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/a.sychev/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.1/log4j-to-slf4j-2.11.1.jar:/Users/a.sychev/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.1/log4j-api-2.11.1.jar:/Users/a.sychev/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/Users/a.sychev/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/Users/a.sychev/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/2.1.2.RELEASE/spring-boot-starter-data-jpa-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-starter-aop/2.1.2.RELEASE/spring-boot-starter-aop-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-aop/5.1.4.RELEASE/spring-aop-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/aspectj/aspectjweaver/1.8.9/aspectjweaver-1.8.9.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.1.2.RELEASE/spring-boot-starter-jdbc-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/com/zaxxer/HikariCP/3.2.0/HikariCP-3.2.0.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-jdbc/5.1.4.RELEASE/spring-jdbc-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/javax/transaction/javax.transaction-api/1.3/javax.transaction-api-1.3.jar:/Users/a.sychev/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/Users/a.sychev/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/a.sychev/.m2/repository/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar:/Users/a.sychev/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar:/Users/a.sychev/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/Users/a.sychev/.m2/repository/org/javassist/javassist/3.23.1-GA/javassist-3.23.1-GA.jar:/Users/a.sychev/.m2/repository/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar:/Users/a.sychev/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/a.sychev/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/Users/a.sychev/.m2/repository/com/fasterxml/classmate/1.4.0/classmate-1.4.0.jar:/Users/a.sychev/.m2/repository/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar:/Users/a.sychev/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.4.Final/hibernate-commons-annotations-5.0.4.Final.jar:/Users/a.sychev/.m2/repository/org/springframework/data/spring-data-jpa/2.1.4.RELEASE/spring-data-jpa-2.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/data/spring-data-commons/2.1.4.RELEASE/spring-data-commons-2.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-orm/5.1.4.RELEASE/spring-orm-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-context/5.1.4.RELEASE/spring-context-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-expression/5.1.4.RELEASE/spring-expression-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-beans/5.1.4.RELEASE/spring-beans-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-aspects/5.1.4.RELEASE/spring-aspects-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-starter-validation/2.1.2.RELEASE/spring-boot-starter-validation-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.14/tomcat-embed-el-9.0.14.jar:/Users/a.sychev/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.14.Final/hibernate-validator-6.0.14.Final.jar:/Users/a.sychev/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/Users/a.sychev/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/2.1.2.RELEASE/spring-boot-configuration-processor-2.1.2.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/springframework/spring-jcl/5.1.4.RELEASE/spring-jcl-5.1.4.RELEASE.jar:/Users/a.sychev/.m2/repository/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar:/Users/a.sychev/.m2/repository/com/google/guava/guava/23.6-jre/guava-23.6-jre.jar:/Users/a.sychev/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/a.sychev/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/a.sychev/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/a.sychev/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/a.sychev/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/a.sychev/.m2/repository/org/apache/httpcomponents/httpcore/4.4.8/httpcore-4.4.8.jar:/Users/a.sychev/.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar:/Users/a.sychev/.m2/repository/org/projectlombok/lombok/1.18.4/lombok-1.18.4.jar:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar, java.vm.vendor=Oracle Corporation, LOG_PATH=logs, sun.arch.data.model=64, java.vendor.url=http://java.oracle.com/, user.timezone=Europe/Moscow, os.name=Mac OS X, java.vm.specification.version=1.8, javax.persistence.validation.mode=AUTO, sun.java.launcher=SUN_STANDARD, user.country=RU, sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib, spring.application.admin.enabled=true, sun.java.command=com.sychev.coffeehouse.CoffeeHouseApplication, hibernate.transaction.jta.platform=org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform@6cd56321, com.sun.management.jmxremote=, javax.persistence.sharedCache.mode=UNSPECIFIED, spring.liveBeansView.mbeanDomain=, sun.cpu.endian=little, user.home=/Users/a.sychev, user.language=ru, java.specification.vendor=Oracle Corporation, java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre, spring.output.ansi.enabled=always, file.separator=/, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.transaction.coordinator_class=class org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl, java.awt.graphicsenv=sun.awt.CGraphicsEnvironment, java.awt.headless=true, sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/classes, hibernate.hbm2ddl.auto=update, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=1.8.0_201-b09, user.name=a.sychev, path.separator=:, os.version=10.14.4, java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/endorsed, java.runtime.name=Java(TM) SE Runtime Environment, hibernate.ejb.persistenceUnitName=default, file.encoding=UTF-8, spring.beaninfo.ignore=true, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, LOG_FILE=logs/spring.log, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, java.io.tmpdir=/var/folders/s4/c0qv4vg92gd3kb_qp2108j7w0000gn/T/, com.zaxxer.hikari.pool_number=1, java.version=1.8.0_201, hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy, user.dir=/Users/a.sychev/Desktop/RSOI/coffee-house-api, os.arch=x86_64, PID=9552, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.lwawt.macosx.CPrinterJob, sun.os.patch.level=unknown, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@34acbc60, java.library.path=/Users/a.sychev/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., java.vendor=Oracle Corporation, hibernate.temp.use_jdbc_metadata_defaults=false, java.vm.info=mixed mode, java.vm.version=25.201-b09, hibernate.bytecode.use_reflection_optimizer=false, java.rmi.server.randomIDs=true, hibernate.connection.datasource=HikariDataSource (null), sun.io.unicode.encoding=UnicodeBig, java.ext.dirs=/Users/a.sychev/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, java.class.version=52.0}
+2019-04-04 18:48:06.366 DEBUG 9552 --- [main] o.h.v.i.e.resolver.TraversableResolvers  : Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2019-04-04 18:48:06.367 DEBUG 9552 --- [main] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2019-04-04 18:48:06.367 DEBUG 9552 --- [main] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2019-04-04 18:48:06.367 DEBUG 9552 --- [main] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2019-04-04 18:48:06.367 DEBUG 9552 --- [main] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2019-04-04 18:48:06.367 DEBUG 9552 --- [main] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2019-04-04 18:48:06.372 DEBUG 9552 --- [main] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2019-04-04 18:48:06.383 DEBUG 9552 --- [main] o.h.v.i.engine.ValidatorFactoryImpl      : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2019-04-04 18:48:06.383 DEBUG 9552 --- [main] o.h.v.i.engine.ValidatorFactoryImpl      : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2019-04-04 18:48:06.384 DEBUG 9552 --- [main] o.h.v.i.engine.ValidatorFactoryImpl      : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2019-04-04 18:48:06.385 DEBUG 9552 --- [main] o.h.v.i.engine.ValidatorFactoryImpl      : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2019-04-04 18:48:06.385 DEBUG 9552 --- [main] o.h.v.i.engine.ValidatorFactoryImpl      : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2019-04-04 18:48:06.386 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.sychev.coffeehouse.model.entity.CafeEntity] is safe
+2019-04-04 18:48:06.386 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.sychev.coffeehouse.model.entity.CafeEntity
+2019-04-04 18:48:06.428 DEBUG 9552 --- [main] org.hibernate.secure.spi.JaccIntegrator  : Skipping JACC integration as it was not enabled
+2019-04-04 18:48:06.429 DEBUG 9552 --- [main] o.hibernate.internal.SessionFactoryImpl  : Instantiated session factory
+2019-04-04 18:48:06.429 DEBUG 9552 --- [main] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@62566842] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@2e6f610d]
+2019-04-04 18:48:06.458 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.sychev.coffeehouse.model.entity.CafeEntity] is safe
+2019-04-04 18:48:06.458 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.sychev.coffeehouse.model.entity.CafeEntity
+2019-04-04 18:48:06.481 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.sychev.coffeehouse.model.entity.CafeEntity] is safe
+2019-04-04 18:48:06.482 DEBUG 9552 --- [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.sychev.coffeehouse.model.entity.CafeEntity
+2019-04-04 18:48:06.742 DEBUG 9552 --- [main] o.h.p.entity.AbstractEntityPersister     : Static SQL for entity: com.sychev.coffeehouse.model.entity.CafeEntity
+2019-04-04 18:48:06.743 DEBUG 9552 --- [main] o.h.p.entity.AbstractEntityPersister     :  Version select: select id from coffeehouse.cafe where id =?
+2019-04-04 18:48:06.743 DEBUG 9552 --- [main] o.h.p.entity.AbstractEntityPersister     :  Snapshot select: select cafeentity_.id, cafeentity_.cafe_uid as cafe_uid2_0_, cafeentity_.description as descript3_0_, cafeentity_.latitude as latitude4_0_, cafeentity_.longitude as longitud5_0_, cafeentity_.name as name6_0_, cafeentity_.owner_uid as owner_ui7_0_ from coffeehouse.cafe cafeentity_ where cafeentity_.id=?
+2019-04-04 18:48:06.743 DEBUG 9552 --- [main] o.h.p.entity.AbstractEntityPersister     :  Insert 0: insert into coffeehouse.cafe (cafe_uid, description, latitude, longitude, name, owner_uid, id) values (?, ?, ?, ?, ?, ?, ?)
+2019-04-04 18:48:06.743 DEBUG 9552 --- [main] o.h.p.entity.AbstractEntityPersister     :  Update 0: update coffeehouse.cafe set cafe_uid=?, description=?, latitude=?, longitude=?, name=?, owner_uid=? where id=?
+2019-04-04 18:48:06.743 DEBUG 9552 --- [main] o.h.p.entity.AbstractEntityPersister     :  Delete 0: delete from coffeehouse.cafe where id=?
+2019-04-04 18:48:06.761 DEBUG 9552 --- [main] o.h.l.p.b.i.spaces.QuerySpacesImpl       : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1491344a]
+2019-04-04 18:48:06.762 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : cafeUid
+2019-04-04 18:48:06.762 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : description
+2019-04-04 18:48:06.762 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : latitude
+2019-04-04 18:48:06.763 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : longitude
+2019-04-04 18:48:06.763 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : name
+2019-04-04 18:48:06.763 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : ownerUid
+2019-04-04 18:48:06.763 DEBUG 9552 --- [main] lanBuildingAssociationVisitationStrategy : Building LoadPlan...
+2019-04-04 18:48:06.771 DEBUG 9552 --- [main] h.l.p.e.i.LoadQueryJoinAndFetchProcessor : processing queryspace <gen:0>
+2019-04-04 18:48:06.775 DEBUG 9552 --- [main] o.h.l.p.build.spi.LoadPlanTreePrinter    : LoadPlan(entity=com.sychev.coffeehouse.model.entity.CafeEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.sychev.coffeehouse.model.entity.CafeEntity, querySpaceUid=<gen:0>, path=com.sychev.coffeehouse.model.entity.CafeEntity)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sychev.coffeehouse.model.entity.CafeEntity)
+          - SQL table alias mapping - cafeentity0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.loader.entity.plan.EntityLoader      : Static select for entity com.sychev.coffeehouse.model.entity.CafeEntity [NONE]: select cafeentity0_.id as id1_0_0_, cafeentity0_.cafe_uid as cafe_uid2_0_0_, cafeentity0_.description as descript3_0_0_, cafeentity0_.latitude as latitude4_0_0_, cafeentity0_.longitude as longitud5_0_0_, cafeentity0_.name as name6_0_0_, cafeentity0_.owner_uid as owner_ui7_0_0_ from coffeehouse.cafe cafeentity0_ where cafeentity0_.id=?
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.l.p.b.i.spaces.QuerySpacesImpl       : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@554c4eaa]
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : cafeUid
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : description
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : latitude
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : longitude
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : name
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : ownerUid
+2019-04-04 18:48:06.777 DEBUG 9552 --- [main] lanBuildingAssociationVisitationStrategy : Building LoadPlan...
+2019-04-04 18:48:06.778 DEBUG 9552 --- [main] h.l.p.e.i.LoadQueryJoinAndFetchProcessor : processing queryspace <gen:0>
+2019-04-04 18:48:06.778 DEBUG 9552 --- [main] o.h.l.p.build.spi.LoadPlanTreePrinter    : LoadPlan(entity=com.sychev.coffeehouse.model.entity.CafeEntity)
+    - Returns
+       - EntityReturnImpl(entity=com.sychev.coffeehouse.model.entity.CafeEntity, querySpaceUid=<gen:0>, path=com.sychev.coffeehouse.model.entity.CafeEntity)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sychev.coffeehouse.model.entity.CafeEntity)
+          - SQL table alias mapping - cafeentity0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2019-04-04 18:48:06.778 DEBUG 9552 --- [main] o.h.loader.entity.plan.EntityLoader      : Static select for entity com.sychev.coffeehouse.model.entity.CafeEntity [READ]: select cafeentity0_.id as id1_0_0_, cafeentity0_.cafe_uid as cafe_uid2_0_0_, cafeentity0_.description as descript3_0_0_, cafeentity0_.latitude as latitude4_0_0_, cafeentity0_.longitude as longitud5_0_0_, cafeentity0_.name as name6_0_0_, cafeentity0_.owner_uid as owner_ui7_0_0_ from coffeehouse.cafe cafeentity0_ where cafeentity0_.id=?
+2019-04-04 18:48:06.791 DEBUG 9552 --- [main] org.hibernate.loader.Loader              : Static select for action ACTION_MERGE on entity com.sychev.coffeehouse.model.entity.CafeEntity: select cafeentity0_.id as id1_0_0_, cafeentity0_.cafe_uid as cafe_uid2_0_0_, cafeentity0_.description as descript3_0_0_, cafeentity0_.latitude as latitude4_0_0_, cafeentity0_.longitude as longitud5_0_0_, cafeentity0_.name as name6_0_0_, cafeentity0_.owner_uid as owner_ui7_0_0_ from coffeehouse.cafe cafeentity0_ where cafeentity0_.id=?
+2019-04-04 18:48:06.791 DEBUG 9552 --- [main] org.hibernate.loader.Loader              : Static select for action ACTION_REFRESH on entity com.sychev.coffeehouse.model.entity.CafeEntity: select cafeentity0_.id as id1_0_0_, cafeentity0_.cafe_uid as cafe_uid2_0_0_, cafeentity0_.description as descript3_0_0_, cafeentity0_.latitude as latitude4_0_0_, cafeentity0_.longitude as longitud5_0_0_, cafeentity0_.name as name6_0_0_, cafeentity0_.owner_uid as owner_ui7_0_0_ from coffeehouse.cafe cafeentity0_ where cafeentity0_.id=?
+2019-04-04 18:48:06.826  INFO 9552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-04 18:48:07.830 ERROR 9552 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:132) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:310) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:467) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:939) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.sychev.coffeehouse.CoffeeHouseApplication.main(CoffeeHouseApplication.java:10) ~[classes/:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 47 common frames omitted
+
+2019-04-04 18:48:07.831 DEBUG 9552 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unable to open JDBC Connection for DDL execution [n/a]
+
+org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:132) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:310) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:467) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:939) [hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.sychev.coffeehouse.CoffeeHouseApplication.main(CoffeeHouseApplication.java:10) ~[classes/:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 47 common frames omitted
+
+2019-04-04 18:48:07.831  WARN 9552 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2019-04-04 18:48:07.831 ERROR 9552 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+2019-04-04 18:48:07.834 DEBUG 9552 --- [main] o.hibernate.internal.SessionFactoryImpl  : HHH000031: Closing
+2019-04-04 18:48:07.835 DEBUG 9552 --- [main] o.h.internal.SessionFactoryRegistry      : Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@3bed3315
+2019-04-04 18:48:07.836 DEBUG 9552 --- [main] o.h.type.spi.TypeConfiguration$Scope     : Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@119b0892] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@2e6f610d]
+2019-04-04 18:48:07.840 DEBUG 9552 --- [main] o.h.s.i.AbstractServiceRegistryImpl      : Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2019-04-04 18:48:07.841 DEBUG 9552 --- [main] o.h.b.r.i.BootstrapServiceRegistryImpl   : Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2019-04-04 18:48:07.842  WARN 9552 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2019-04-04 18:48:07.851  INFO 9552 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-04-04 18:48:07.856 ERROR 9552 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at com.sychev.coffeehouse.CoffeeHouseApplication.main(CoffeeHouseApplication.java:10) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:402) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) ~[spring-beans-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 15 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:115) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:69) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:132) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:310) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:467) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:939) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 19 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	... 33 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 47 common frames omitted
+
