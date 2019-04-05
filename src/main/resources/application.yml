@@ -1,5 +1,5 @@
 grpc:
-  port: ${PORT:8080}
+  port: 8081
 
 logging:
   path: logs
