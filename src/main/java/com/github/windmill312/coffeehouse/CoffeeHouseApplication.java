@@ -1,4 +1,4 @@
-package com.sychev.coffeehouse;
+package com.github.windmill312.coffeehouse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

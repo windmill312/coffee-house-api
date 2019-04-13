@@ -1,11 +1,11 @@
-package com.sychev.coffeehouse.grpc.service.v1.impl;
+package com.github.windmill312.coffeehouse.grpc.service.v1.impl;
 
-import com.sychev.coffeehouse.converter.ModelConverter;
-import com.sychev.coffeehouse.grpc.model.v1.*;
-import com.sychev.coffeehouse.grpc.service.v1.CoffeeHouseServiceV1Grpc;
-import com.sychev.coffeehouse.model.entity.CafeEntity;
-import com.sychev.coffeehouse.service.CoffeeHouseService;
-import com.sychev.common.grpc.model.Empty;
+import com.github.windmill312.coffeehouse.converter.ModelConverter;
+import com.github.windmill312.coffeehouse.grpc.model.v1.*;
+import com.github.windmill312.coffeehouse.grpc.service.v1.CoffeeHouseServiceV1Grpc;
+import com.github.windmill312.coffeehouse.model.entity.CafeEntity;
+import com.github.windmill312.coffeehouse.service.CoffeeHouseService;
+import com.github.windmill312.common.grpc.model.Empty;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;

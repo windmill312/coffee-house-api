@@ -1,7 +1,7 @@
-package com.sychev.coffeehouse.grpc.service;
+package com.github.windmill312.coffeehouse.grpc.service;
 
 
-import com.sychev.coffeehouse.exception.NotFoundCafeException;
+import com.github.windmill312.coffeehouse.exception.NotFoundCafeException;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import org.aspectj.lang.ProceedingJoinPoint;

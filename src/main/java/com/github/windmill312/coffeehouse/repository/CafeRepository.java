@@ -1,6 +1,6 @@
-package com.sychev.coffeehouse.repository;
+package com.github.windmill312.coffeehouse.repository;
 
-import com.sychev.coffeehouse.model.entity.CafeEntity;
+import com.github.windmill312.coffeehouse.model.entity.CafeEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

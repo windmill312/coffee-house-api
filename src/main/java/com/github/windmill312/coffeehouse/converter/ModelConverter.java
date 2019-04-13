@@ -1,11 +1,11 @@
-package com.sychev.coffeehouse.converter;
+package com.github.windmill312.coffeehouse.converter;
 
-import com.sychev.coffeehouse.grpc.model.v1.GCafeInfo;
-import com.sychev.coffeehouse.grpc.model.v1.GLocation;
-import com.sychev.coffeehouse.model.entity.CafeEntity;
-import com.sychev.common.grpc.model.GPage;
-import com.sychev.common.grpc.model.GPageable;
-import com.sychev.common.grpc.model.GUuid;
+import com.github.windmill312.coffeehouse.grpc.model.v1.GCafeInfo;
+import com.github.windmill312.coffeehouse.grpc.model.v1.GLocation;
+import com.github.windmill312.coffeehouse.model.entity.CafeEntity;
+import com.github.windmill312.common.grpc.model.GPage;
+import com.github.windmill312.common.grpc.model.GPageable;
+import com.github.windmill312.common.grpc.model.GUuid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

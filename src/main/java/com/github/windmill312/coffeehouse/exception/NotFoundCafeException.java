@@ -1,4 +1,4 @@
-package com.sychev.coffeehouse.exception;
+package com.github.windmill312.coffeehouse.exception;
 
 public class NotFoundCafeException extends RuntimeException {
 

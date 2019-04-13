@@ -1,4 +1,4 @@
-package com.sychev.coffeehouse.model.entity;
+package com.github.windmill312.coffeehouse.model.entity;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -22,7 +22,11 @@ public class CafeEntity {
 
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(
+            schema = "coffeehouse", name = "coffeehouse.cafe_id_seq",
+            sequenceName = "coffeehouse.cafe_id_seq", allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "coffeehouse.cafe_id_seq")
     public Integer getId() {
         return id;
     }

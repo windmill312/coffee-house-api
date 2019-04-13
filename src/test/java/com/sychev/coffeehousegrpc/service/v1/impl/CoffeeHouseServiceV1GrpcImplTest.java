@@ -1,12 +1,12 @@
-package com.sychev.coffeehousegrpc.service.v1.impl;
+package com.github.windmill312.coffeehousegrpc.service.v1.impl;
 
-import com.sychev.coffeehouse.converter.ModelConverter;
-import com.sychev.coffeehouse.grpc.model.v1.*;
-import com.sychev.coffeehouse.grpc.service.v1.impl.CoffeeHouseServiceV1GrpcImpl;
-import com.sychev.coffeehouse.model.entity.CafeEntity;
-import com.sychev.coffeehouse.service.CoffeeHouseService;
-import com.sychev.common.grpc.model.GPageable;
-import com.sychev.common.grpc.model.GUuid;
+import com.github.windmill312.coffeehouse.converter.ModelConverter;
+import com.github.windmill312.coffeehouse.grpc.model.v1.*;
+import com.github.windmill312.coffeehouse.grpc.service.v1.impl.CoffeeHouseServiceV1GrpcImpl;
+import com.github.windmill312.coffeehouse.model.entity.CafeEntity;
+import com.github.windmill312.coffeehouse.service.CoffeeHouseService;
+import com.github.windmill312.common.grpc.model.GPageable;
+import com.github.windmill312.common.grpc.model.GUuid;
 import io.grpc.stub.StreamObserver;
 import org.junit.Test;
 import org.junit.runner.RunWith;

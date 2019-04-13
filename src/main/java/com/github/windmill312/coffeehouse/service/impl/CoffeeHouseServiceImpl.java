@@ -1,9 +1,9 @@
-package com.sychev.coffeehouse.service.impl;
+package com.github.windmill312.coffeehouse.service.impl;
 
-import com.sychev.coffeehouse.exception.NotFoundCafeException;
-import com.sychev.coffeehouse.model.entity.CafeEntity;
-import com.sychev.coffeehouse.repository.CafeRepository;
-import com.sychev.coffeehouse.service.CoffeeHouseService;
+import com.github.windmill312.coffeehouse.exception.NotFoundCafeException;
+import com.github.windmill312.coffeehouse.model.entity.CafeEntity;
+import com.github.windmill312.coffeehouse.repository.CafeRepository;
+import com.github.windmill312.coffeehouse.service.CoffeeHouseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

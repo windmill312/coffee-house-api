@@ -5,16 +5,16 @@ logging:
   path: logs
   level: DEBUG
   level.org.hibernate: DEBUG
-  level.com.sychev: DEBUG
+  level.com.github.windmill312: DEBUG
 
 spring:
   application:
     name: coffee-house
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: "jdbc:postgresql://db-coffee-house.ceg8zokcldpo.eu-west-1.rds.amazonaws.com:5432/db_coffee_house"
-    username: fthlzewmqqaaed
-    password: "9248f7a0e88d8893f1870e05fef34f53a636e6ebccef10aa5ff6e097d2d1a9c0"
+    url: jdbc:postgresql://localhost:5432/db_coffeehouse
+    username: a.sychev
+    password: "Ujkjcjdfzgjxnf8"
 
 
   jpa:
